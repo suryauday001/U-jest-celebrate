@@ -17,6 +17,7 @@ function UploadContentBox() {
     const usersCollectionRef = collection(db, "ujustcelebrate");
     const [formsubmit, setFormsubmit] = useState(true)
     const [showpopup, setShowpopup] = useState(true)
+    const [isClick, setClick] = useState(false);
 
     const createUser = async () => {
 
@@ -172,11 +173,11 @@ function UploadContentBox() {
                                             className="submitbtn" onClick={createContent} disabled={!hashtag || !imageURL}>SUBMIT
                                         </button>
                                     </li>
-                                </ul> : <h2><strong>UJustBrighten</strong> up Happy Faces</h2>
+                                </ul> : <h2><strong><span>UJustB</span>righten</strong> up Happy Faces</h2>
                             }
 
                         </section>
-                    </> : <button onClick={showpopupfun} className="uploadBtn">Celebrate</button>
+                    </> : <button onClick={showpopupfun} className="uploadBtn">Upload to Celebrate</button>
             }
         </>
     )

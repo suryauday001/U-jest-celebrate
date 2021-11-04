@@ -24,7 +24,7 @@ export default function Home() {
     default: 4,
     1100: 3,
     700: 2,
-    500: 1
+    500: 2
   };
 
   const updateUser = async (id, like) => {
@@ -75,12 +75,12 @@ export default function Home() {
                 <div className="hoverCard">
                   <div className="actionbar">
                     <h2># {user.hashtag}</h2>
-                    <div><button onClick={() => {
-                      updateUser(user.id, user.like);
-                    }}><Image src="/heart.png" height="20px" width="20px" /></button><span>{user.like}</span></div>
                   </div>
 
                 </div>
+                <div className="heartBtn"><button onClick={() => {
+                      updateUser(user.id, user.like);
+                    }}><Image src="/heart.png" height="20px" width="20px" /></button><div>{user.like}</div></div>
 
               </div>
             );

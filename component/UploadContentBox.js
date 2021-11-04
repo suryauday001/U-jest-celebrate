@@ -29,6 +29,9 @@ function UploadContentBox() {
             like: newLike,
         }
         console.log(data);
+        setHashtag('');
+        setimage('');
+        setImagename('');
         await addDoc(usersCollectionRef, data);
         setFormsubmit(false);
     };
@@ -77,6 +80,7 @@ function UploadContentBox() {
 
     const showpopupfun = event => {
         setShowpopup(true);
+        setFormsubmit(true);
     }
 
     function hideShowpop() {
@@ -151,7 +155,7 @@ function UploadContentBox() {
                                     </li>
                                     <li className="uploadbtn">
                                         <button onClick={handleClick}>
-                                            Upload to Celebrate
+                                            Upload
                                         </button>
                                         <input
                                             type="file"
@@ -167,7 +171,7 @@ function UploadContentBox() {
                                             className="submitbtn" onClick={createContent} disabled={!hashtag || !imageURL}>SUBMIT
                                         </button>
                                     </li>
-                                </ul> : <h2><strong>UJustBe</strong> righten up Happy Faces</h2>
+                                </ul> : <h2><strong>UJustBbrighten</strong> up Happy Faces</h2>
                             }
 
                         </section>

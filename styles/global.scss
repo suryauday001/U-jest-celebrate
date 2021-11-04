@@ -41,6 +41,7 @@ body{
         margin: 0px;
         padding: 0px;
         opacity: 0.7;
+        padding-bottom: 15px;
         @media screen and (max-width: "500px") {
             font-size: 40px;
           }
@@ -128,12 +129,12 @@ body{
       }
       h2{
           text-align: center;
-          strong{
-              display: block;
-              font-family: 'Forum', cursive;
-              color: #16274f;
-              font-size: 48px;
-          }
+        //   strong{
+        //       display: block;
+        //       font-family: 'Forum', cursive;
+        //       color: #16274f;
+        //       font-size: 48px;
+        //   }
           color:#FFF;
       }
       ul{
@@ -191,8 +192,9 @@ body{
       border-radius: 10px;
       overflow: hidden;
       line-height: 0px;
+    //   background-color: #FFF;
       .hoverCard{
-          background-color: rgba(162, 203, 218, 0.7);
+          background-color: rgba(162, 203, 218, 0.9);
           position: absolute;
           bottom: 0px;
           width: 100%;
@@ -209,11 +211,14 @@ body{
                   align-items: center;
                   span{
                       color: #FFF;
-                      color: #fe6f06;
+                    //   color: #fe6f06;
+                    font-weight: 800;
+                    font-size: 24px;
                   }
               }
               button{
                   background: transparent;
+                  cursor: pointer;
                   img{width: 20px;}
                   border: 0px;
                   outline: none
@@ -221,8 +226,8 @@ body{
               }
           }
           h2{
-              font-size: 18px;
-              color: #16274f;
+              font-size: 22px;
+              color: #000;
               font-weight: 600;
               font-family: 'Forum', cursive;
 

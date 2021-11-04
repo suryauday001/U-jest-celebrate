@@ -19,6 +19,7 @@ export default function Home() {
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "ujustcelebrate");
   const [newLike, setNewLike] = useState(0);
+  const [singleDetails, setSingleDetails] = useState(null);
 
   const myBreakpointsAndCols = {
     default: 4,
@@ -27,6 +28,15 @@ export default function Home() {
     500: 2
   };
 
+  function singleDetailsfun(data) {
+
+    setSingleDetails(data);
+    console.log(singleDetails);
+  }
+
+  function closeimagebox() {
+    setSingleDetails(null);
+  }
   const updateUser = async (id, like) => {
     console.log(id);
     const userDoc = doc(db, "ujustcelebrate", id);
@@ -53,7 +63,7 @@ export default function Home() {
       <div className="container">
         <div className="headermain">
           <div><Image src="/logo-t.png" height="54px" width="70px" layout="" /></div>
-        <h1>#ujustcelebrate</h1>
+          <h1>#ujustcelebrate</h1>
         </div>
 
         <Masonry
@@ -63,7 +73,7 @@ export default function Home() {
         >
           {users.map((user, i) => {
             return (
-              <div className="cardBlock" key={i} >
+              <div className="cardBlock" key={i}  >
                 {/* <Image
                   //loader={myLoader}
                   src="/heart.png"
@@ -71,7 +81,7 @@ export default function Home() {
                   width={500}
                   height={500}
                 /> */}
-                <img src={user.imageUrl} />
+                <img src={user.imageUrl} onClick={() => singleDetailsfun(user)} />
                 <div className="hoverCard">
                   <div className="actionbar">
                     <h2># {user.hashtag}</h2>
@@ -79,15 +89,27 @@ export default function Home() {
 
                 </div>
                 <div className="heartBtn"><button onClick={() => {
-                      updateUser(user.id, user.like);
-                    }}><Image src="/heart.png" height="20px" width="20px" /></button><div>{user.like}</div></div>
+                  updateUser(user.id, user.like);
+                }}><Image src="/heart.png" height="20px" width="20px" /></button><div>{user.like}</div></div>
 
               </div>
             );
           })}
         </Masonry>
         <UploadContentBox />
+
         {/* <UploadImageBox /> */}
+        {
+          singleDetails ?
+            <div className="imagepopUp">
+              <div className="imageBg" onClick={()=>closeimagebox()}></div>
+              <div className="imageBox">
+                <img src={singleDetails.imageUrl} />
+              </div>
+            </div>
+            : null
+        }
+
       </div>
     </section>
   )

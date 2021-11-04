@@ -151,7 +151,7 @@ function UploadContentBox() {
                                     </li>
                                     <li className="uploadbtn">
                                         <button onClick={handleClick}>
-                                            Upload a file
+                                            Upload to Celebrate
                                         </button>
                                         <input
                                             type="file"
@@ -171,7 +171,7 @@ function UploadContentBox() {
                             }
 
                         </section>
-                    </> : <button onClick={showpopupfun} className="uploadBtn">Celibrate</button>
+                    </> : <button onClick={showpopupfun} className="uploadBtn">Celebrate</button>
             }
         </>
     )

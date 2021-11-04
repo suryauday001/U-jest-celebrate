@@ -32,8 +32,9 @@ function UploadContentBox() {
         setHashtag('');
         setimage('');
         setImagename('');
-        await addDoc(usersCollectionRef, data);
         setFormsubmit(false);
+        await addDoc(usersCollectionRef, data);
+        
     };
 
     // content type
@@ -171,7 +172,7 @@ function UploadContentBox() {
                                             className="submitbtn" onClick={createContent} disabled={!hashtag || !imageURL}>SUBMIT
                                         </button>
                                     </li>
-                                </ul> : <h2><strong>UJustBbrighten</strong> up Happy Faces</h2>
+                                </ul> : <h2><strong>UJustBrighten</strong> up Happy Faces</h2>
                             }
 
                         </section>

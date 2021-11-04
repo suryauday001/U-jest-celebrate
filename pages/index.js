@@ -51,7 +51,10 @@ export default function Home() {
         <Image src="/backgroundimage.png" className="fixedbg" layout="fill" objectFit="cover" objectPosition="center" />
       </div>
       <div className="container">
+        <div className="headermain">
+          <div><Image src="/logo-t.png" height="54px" width="70px" layout="" /></div>
         <h1>#ujustcelebrate</h1>
+        </div>
 
         <Masonry
           breakpointCols={myBreakpointsAndCols}

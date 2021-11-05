@@ -102,9 +102,15 @@ export default function Home() {
         {
           singleDetails ?
             <div className="imagepopUp">
-              <div className="imageBg" onClick={()=>closeimagebox()}></div>
+              <div className="imageBg" onClick={() => closeimagebox()}></div>
               <div className="imageBox">
                 <img src={singleDetails.imageUrl} />
+              </div>
+              <div className="hoverCard">
+                <div className="actionbar">
+                  <h2># {singleDetails.hashtag}</h2>
+                </div>
+
               </div>
             </div>
             : null
